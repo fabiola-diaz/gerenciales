@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>proyectoSIG</name>
+    <name>proyecto1</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -130,16 +130,16 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>entrada de datos</from><to>dimGrado</to><enabled>Y</enabled> </hop>
+  <hop> <from>entrada de datos</from><to>dimgrado</to><enabled>Y</enabled> </hop>
   <hop> <from>Select values</from><to>ordenardatos</to><enabled>Y</enabled> </hop>
   <hop> <from>ordenardatos</from><to>agrupar</to><enabled>Y</enabled> </hop>
   <hop> <from>agrupar</from><to>salidagrado</to><enabled>Y</enabled> </hop>
-  <hop> <from>dimGrado</from><to>dimDepartamento</to><enabled>Y</enabled> </hop>
-  <hop> <from>dimDepartamento</from><to>dimSexo</to><enabled>Y</enabled> </hop>
-  <hop> <from>dimSexo</from><to>dimCatedratico</to><enabled>Y</enabled> </hop>
-  <hop> <from>dimCatedratico</from><to>becadoNormal</to><enabled>Y</enabled> </hop>
-  <hop> <from>becadoNormal</from><to>dimSeccion</to><enabled>Y</enabled> </hop>
-  <hop> <from>dimSeccion</from><to>dima&#xf1;o</to><enabled>Y</enabled> </hop>
+  <hop> <from>dimgrado</from><to>dimdepartamento</to><enabled>Y</enabled> </hop>
+  <hop> <from>dimdepartamento</from><to>dimsexo</to><enabled>Y</enabled> </hop>
+  <hop> <from>dimsexo</from><to>dimcatedratico</to><enabled>Y</enabled> </hop>
+  <hop> <from>dimcatedratico</from><to>becadoNormal</to><enabled>Y</enabled> </hop>
+  <hop> <from>becadoNormal</from><to>dimseccion</to><enabled>Y</enabled> </hop>
+  <hop> <from>dimseccion</from><to>dima&#xf1;o</to><enabled>Y</enabled> </hop>
   <hop> <from>dima&#xf1;o</from><to>Select values</to><enabled>Y</enabled> </hop>
   </order>
   <step>
@@ -216,8 +216,8 @@
       </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>595</xloc>
-      <yloc>159</yloc>
+      <xloc>643</xloc>
+      <yloc>43</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -295,8 +295,8 @@
       </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>738</xloc>
-      <yloc>61</yloc>
+      <xloc>829</xloc>
+      <yloc>40</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -340,8 +340,8 @@
       <last_update_field/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>364</xloc>
-      <yloc>268</yloc>
+      <xloc>527</xloc>
+      <yloc>237</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -385,14 +385,14 @@
       <last_update_field/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>599</xloc>
-      <yloc>263</yloc>
+      <xloc>649</xloc>
+      <yloc>145</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>dimCatedratico</name>
+    <name>dimcatedratico</name>
     <type>CombinationLookup</type>
     <description/>
     <distribute>Y</distribute>
@@ -403,7 +403,7 @@
            <schema_name/>
            </partitioning>
       <schema/>
-      <table>_dimcatedratico</table>
+      <table>dimcatedratico</table>
       <connection>conexiondwh</connection>
       <commit>100</commit>
       <cache_size>9999</cache_size>
@@ -430,14 +430,14 @@
       <last_update_field/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>245</xloc>
-      <yloc>267</yloc>
+      <xloc>407</xloc>
+      <yloc>239</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>dimDepartamento</name>
+    <name>dimdepartamento</name>
     <type>CombinationLookup</type>
     <description/>
     <distribute>Y</distribute>
@@ -448,7 +448,7 @@
            <schema_name/>
            </partitioning>
       <schema/>
-      <table>_dimDepartamentos</table>
+      <table>dimdepartamentos</table>
       <connection>conexiondwh</connection>
       <commit>100</commit>
       <cache_size>9999</cache_size>
@@ -466,7 +466,7 @@
           <lookup>id_departamento</lookup>
         </key>
         <return>
-          <name>correlativoDepto</name>
+          <name>iddepa</name>
           <creation_method>autoinc</creation_method>
           <use_autoinc>Y</use_autoinc>
         </return>
@@ -475,14 +475,14 @@
       <last_update_field/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>143</xloc>
-      <yloc>158</yloc>
+      <xloc>115</xloc>
+      <yloc>234</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>dimGrado</name>
+    <name>dimgrado</name>
     <type>CombinationLookup</type>
     <description/>
     <distribute>Y</distribute>
@@ -493,7 +493,7 @@
            <schema_name/>
            </partitioning>
       <schema/>
-      <table>_dimGrado</table>
+      <table>dimgrado</table>
       <connection>conexiondwh</connection>
       <commit>100</commit>
       <cache_size>9999</cache_size>
@@ -511,7 +511,7 @@
           <lookup>grado</lookup>
         </key>
         <return>
-          <name>correlativoGrado</name>
+          <name>correlativo</name>
           <creation_method>autoinc</creation_method>
           <use_autoinc>Y</use_autoinc>
         </return>
@@ -520,14 +520,14 @@
       <last_update_field/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>145</xloc>
-      <yloc>50</yloc>
+      <xloc>125</xloc>
+      <yloc>123</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>dimSeccion</name>
+    <name>dimseccion</name>
     <type>CombinationLookup</type>
     <description/>
     <distribute>Y</distribute>
@@ -538,7 +538,7 @@
            <schema_name/>
            </partitioning>
       <schema/>
-      <table>_dimSeccion</table>
+      <table>dimseccion</table>
       <connection>conexiondwh</connection>
       <commit>100</commit>
       <cache_size>9999</cache_size>
@@ -565,14 +565,14 @@
       <last_update_field/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>479</xloc>
-      <yloc>265</yloc>
+      <xloc>650</xloc>
+      <yloc>234</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>dimSexo</name>
+    <name>dimsexo</name>
     <type>CombinationLookup</type>
     <description/>
     <distribute>Y</distribute>
@@ -583,7 +583,7 @@
            <schema_name/>
            </partitioning>
       <schema/>
-      <table>_dimSexo</table>
+      <table>dimsexo</table>
       <connection>conexiondwh</connection>
       <commit>100</commit>
       <cache_size>9999</cache_size>
@@ -597,7 +597,7 @@
           <lookup>sexo</lookup>
         </key>
         <return>
-          <name>correlativoSexo</name>
+          <name>idsexo</name>
           <creation_method>autoinc</creation_method>
           <use_autoinc>Y</use_autoinc>
         </return>
@@ -606,8 +606,8 @@
       <last_update_field/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>144</xloc>
-      <yloc>264</yloc>
+      <xloc>240</xloc>
+      <yloc>249</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -632,8 +632,8 @@
     <lazy_conversion_active>N</lazy_conversion_active>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>33</xloc>
-      <yloc>49</yloc>
+      <xloc>116</xloc>
+      <yloc>29</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -666,8 +666,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>591</xloc>
-      <yloc>57</yloc>
+      <xloc>737</xloc>
+      <yloc>42</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -704,8 +704,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>738</xloc>
-      <yloc>270</yloc>
+      <xloc>828</xloc>
+      <yloc>213</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
